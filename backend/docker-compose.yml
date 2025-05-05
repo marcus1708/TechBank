@@ -1,0 +1,29 @@
+version: '3.9'
+
+services:
+  app:
+    build: .
+    container_name: Tech-Bank 
+    ports:
+      - '3001:3001'
+    environment:
+      - MONGO_URL=mongodb://mongo-bank:27017/tech-bank
+      - JWT_SECRET=segredo
+      - PORT=3001
+    depends_on:
+      - mongodb
+    volumes:
+      - .:/app
+    restart: always
+
+  mongodb:
+    image: mongo:6
+    container_name: mongo-bank
+    ports:
+      - '27017:27017'
+    volumes:
+      - mongo_data:/data/db
+    restart: always
+
+volumes:
+  mongo_data:
