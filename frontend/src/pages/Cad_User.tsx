@@ -23,7 +23,7 @@ export default function RegisterPage() {
         senha,
       });
       setSuccess(true);
-      setTimeout(() => navigate("/welcome"), 2000);
+      setTimeout(() => navigate("/"), 2000);
     } catch (err) {
       setError("Erro ao cadastrar usuário. Tente novamente.");
     }
@@ -34,7 +34,7 @@ export default function RegisterPage() {
       <form onSubmit={handleRegister} className="bg-white p-6 rounded shadow-md w-80">
         <h1 className="text-xl font-bold mb-4 text-center">Cadastro de Usuário</h1>
         {error && <p className="text-red-500 text-sm mb-2">{error}</p>}
-        {success && <p className="text-green-500 text-sm mb-2">Cadastro realizado com sucesso!</p>}
+        {success && <p className="absolute top-10 bg-green-500 text-white px-6 py-3 rounded shadow-md text-center z-50">Cadastro realizado com sucesso!</p>}
         <input
           id="nome"
           type="text"
