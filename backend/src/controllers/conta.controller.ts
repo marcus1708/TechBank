@@ -61,7 +61,7 @@ export const atualizarSaldoSaque = async (req: Request, res: Response) => {
 
     conta.saldo -= valor;
     await conta.save();
-    res.status(200).json(conta);
+    res.status(200).json({ mensagem: 'Saque realizado com sucesso', conta });
   } catch (error) {
     res.status(500).json({ mensagem: 'Erro ao atualizar saldo', error });
   }
@@ -82,7 +82,7 @@ export const atualizarSaldoDeposito = async (req: Request, res: Response) => {
 
     conta.saldo += valor;
     await conta.save();
-    res.status(200).json(conta);
+    res.status(200).json({ mensagem: 'Depósito realizado com sucesso', conta });
   } catch (error) {
     res.status(500).json({ mensagem: 'Erro ao atualizar saldo', error });
   }
@@ -101,7 +101,7 @@ export const excluirConta = async (req: Request, res: Response) => {
 
     await Conta.findByIdAndDelete(id);
 
-    res.status(200).json({ mensagem: "Conta excluída com sucesso." });
+    res.status(200).json({ mensagem: "Conta excluída com sucesso" });
   } catch (error) {
     console.error("Erro ao excluir conta:", error);
     res.status(500).json({ mensagem: "Erro ao excluir conta." });
