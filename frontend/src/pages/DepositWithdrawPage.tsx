@@ -57,7 +57,7 @@ export default function DepositWithdrawPage() {
       <div className="bg-white p-6 rounded shadow-md w-full max-w-md">
         <h1 className="text-2xl font-bold mb-4 text-center">Depósito/Saque</h1>
         {error && <p className="text-red-500 text-sm mb-4">{error}</p>}
-        {success && <p className="text-green-500 text-sm mb-4">{success}</p>}
+        {success && <p className="absolute top-10 bg-green-500 text-white px-6 py-3 rounded shadow-md text-center z-50">{success}</p>}
         {saldoAtual !== null && (
           <p className="text-gray-700 text-center mb-4">
             Saldo Atual: <span className="font-bold">R$ {saldoAtual.toFixed(2)}</span>
