@@ -14,7 +14,7 @@ export default function WelcomePage() {
 
   const handleLogout = () => {
     logout();
-    navigate("/");
+    navigate("/login");
   };
 
   if (!usuarioLogado) {
