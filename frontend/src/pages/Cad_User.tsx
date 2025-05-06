@@ -23,7 +23,7 @@ export default function RegisterPage() {
         senha,
       });
       setSuccess(true);
-      setTimeout(() => navigate("/"), 2000);
+      setTimeout(() => navigate("/welcome"), 2000);
     } catch (err) {
       setError("Erro ao cadastrar usuário. Tente novamente.");
     }
@@ -36,6 +36,7 @@ export default function RegisterPage() {
         {error && <p className="text-red-500 text-sm mb-2">{error}</p>}
         {success && <p className="text-green-500 text-sm mb-2">Cadastro realizado com sucesso!</p>}
         <input
+          id="nome"
           type="text"
           placeholder="Nome"
           className="w-full p-2 mb-3 border rounded"
@@ -44,6 +45,7 @@ export default function RegisterPage() {
           required
         />
         <input
+          id="email"
           type="email"
           placeholder="Email"
           className="w-full p-2 mb-3 border rounded"
@@ -52,6 +54,7 @@ export default function RegisterPage() {
           required
         />
         <input
+          id="profissao"
           type="text"
           placeholder="Profissão"
           className="w-full p-2 mb-3 border rounded"
@@ -60,6 +63,7 @@ export default function RegisterPage() {
           required
         />
         <input
+          id="idade"
           type="number"
           placeholder="Idade"
           className="w-full p-2 mb-3 border rounded"
@@ -68,6 +72,7 @@ export default function RegisterPage() {
           required
         />
         <input
+          id="senha"
           type="password"
           placeholder="Senha"
           className="w-full p-2 mb-4 border rounded"
@@ -79,7 +84,7 @@ export default function RegisterPage() {
           Cadastrar
         </button>
         <p className="text-sm mt-4 text-center">
-          Já tem conta? <Link to="http://localhost:5173/" className="text-blue-500">Faça login</Link>
+          Já tem conta? <Link to="http://localhost:5173/login" className="text-blue-500">Faça login</Link>
         </p>
       </form>
     </div>
