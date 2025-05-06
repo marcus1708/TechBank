@@ -18,7 +18,7 @@ export const criarConta = async (req: Request, res: Response) => {
     const novaConta = new Conta({ titular, saldo });
     await novaConta.save();
 
-    res.status(201).json(novaConta);
+    res.status(201).json({ mensagem: "Conta cadastrada com sucesso" ,id:novaConta._id});
   } catch (error) {
     console.error("Erro ao criar conta:", error);
     res.status(500).json({ mensagem: "Erro ao criar conta." });
