@@ -25,7 +25,7 @@ export default function CreateAccountPage() {
       <form onSubmit={handleCreateAccount} className="bg-white p-6 rounded shadow-md w-80">
         <h1 className="text-xl font-bold mb-4 text-center">Criar Conta</h1>
         {error && <p className="text-red-500 text-sm mb-2">{error}</p>}
-        {success && <p className="text-green-500 text-sm mb-2">{success}</p>}
+        {success && <p className="absolute top-10 bg-green-500 text-white px-6 py-3 rounded shadow-md text-center z-50">{success}</p>}
         <input
           type="text"
           placeholder="Titular"
