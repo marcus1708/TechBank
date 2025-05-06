@@ -1,7 +1,7 @@
 {
     "name": "api-crud",
     "version": "1.0.0",
-    "description": "API com CRUD de Usuário, Livro, Loja e Carrinho",
+    "description": "Tech Bank API",
     "main": "dist/server.js",
     "scripts": {
         "dev": "ts-node-dev src/server.ts",

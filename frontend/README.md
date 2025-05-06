@@ -1,19 +1,16 @@
 <<<<<<< HEAD
-# E-commerce React com API
+# Tech Bank - API e Front
 =======
 # 🛒 Ecommerce 
 >>>>>>> refs/remotes/origin/main
 
-Este é um projeto de e-commerce construído com **React**, **TypeScript**, **TailwindCSS** e **ShadCN/UI**, utilizando a API [Serverest](https://serverest.dev/) para simular funcionalidades de um backend.
+Este é um projeto de e-commerce construído com **React**, **TypeScript**, **TailwindCSS** e **ShadCN/UI**
 
 ## Funcionalidades
 
 - Cadastro e login de usuários
-- Listagem de produtos com busca por nome
-- Cadastro e edição de produtos
-- Adição de produtos ao carrinho
-- Tela de carrinho com opção de finalizar ou cancelar compra
-- Tela de pagamento com validação de data (mês/ano) e animação de sucesso
+- Criação de Conta
+- Depósito e Saque na conta
 - Design responsivo e moderno
 
 ## Tecnologias Utilizadas !
@@ -32,19 +29,13 @@ Este é um projeto de e-commerce construído com **React**, **TypeScript**, **Ta
 
 1. Clone o repositório:
    ```bash
-   git clone https://github.com/seu-usuario/seu-repositorio.git
+   git clone https://github.com/marcus1708/TechBank.git
    cd seu-repositorio
    ```
 
 2. Instale as dependências:
    ```bash
    npm install
-   ```
-
-   ou
-
-   ```bash
-   yarn
    ```
 
 3. Execute o projeto:
@@ -77,15 +68,7 @@ src/
 ## Observações
 
 - O projeto utiliza LocalStorage para armazenar o carrinho.
-- A API Serverest pode ter limitação de requisições.
-- O campo de validade do cartão só aceita meses/anos futuros.
 
-## Melhorias Futuras !!!
-
-- Implementar autenticação JWT real
-- Dashboard para administrador
-- Histórico de pedidos
-- Testes automatizados com Cypress
 
 ---
 
@@ -101,7 +84,7 @@ Desenvolvido por Marcus Vinicius QA 🚀
 1. **Clone o repositório:**
 
 ```bash
-git clone https://github.com/marcus1708/Ecommerce.git
+git clone https://github.com/marcus1708/TechBank.git
 cd Ecommerce
 ```bash
 
