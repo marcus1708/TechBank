@@ -1,10 +1,10 @@
 <<<<<<< HEAD
 # Tech Bank - API e Front
 =======
-# 🛒 Ecommerce 
+# Banco Digital
 >>>>>>> refs/remotes/origin/main
 
-Este é um projeto de e-commerce construído com **React**, **TypeScript**, **TailwindCSS** e **ShadCN/UI**
+Este é um projeto de Banco Digital construído com **React**, **TypeScript**, **TailwindCSS** e **ShadCN/UI**
 
 ## Funcionalidades
 
