@@ -73,7 +73,7 @@ export default function DepositWithdrawPage() {
         <h1 className="text-2xl font-bold mb-4 text-center">Depósito/Saque</h1>
         {error && <p className="absolute top-10 bg-red-500 text-white px-6 py-3 rounded shadow-md text-center z-50">{error}</p>}
         {success && <p className="absolute top-10 bg-green-500 text-white px-6 py-3 rounded shadow-md text-center z-50">{success}</p>}
-        {saldoAtual !== null && (
+        {saldoAtual !== null && !isNaN(saldoAtual) &&(
           <p className="text-gray-700 text-center mb-4">
             Saldo Atual: <span className="font-bold">R$ {saldoAtual.toFixed(2)}</span>
           </p>
@@ -89,12 +89,14 @@ export default function DepositWithdrawPage() {
         />
         <div className="flex justify-between">
           <button
+            id="depositar"
             onClick={handleDeposito}
             className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 w-1/2 mr-2"
           >
-            Depósito
+            Deposito
           </button>
           <button
+            id="sacar"
             onClick={handleSaque}
             className="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 w-1/2"
           >
