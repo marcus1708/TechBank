@@ -89,14 +89,14 @@ export default function DepositWithdrawPage() {
         />
         <div className="flex justify-between">
           <button
-            id="depositar"
+            //id="depositar"
             onClick={handleDeposito}
             className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 w-1/2 mr-2"
           >
             Deposito
           </button>
           <button
-            id="sacar"
+            //id="sacar"
             onClick={handleSaque}
             className="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 w-1/2"
           >
