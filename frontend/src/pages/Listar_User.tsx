@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom"; // Importar useNavigate
 import axios from "axios";
 
 interface Usuario {
@@ -12,6 +13,7 @@ interface Usuario {
 export default function UserListPage() {
   const [usuarios, setUsuarios] = useState<Usuario[]>([]);
   const [error, setError] = useState("");
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchUsuarios = async () => {
@@ -31,7 +33,10 @@ export default function UserListPage() {
       {error && <p className="text-red-500">{error}</p>}
       <div className="space-y-4">
         {usuarios.map((usuario) => (
-          <div key={usuario.id} className="bg-white p-4 rounded shadow-md">
+          <div
+            key={usuario.id}
+            className="bg-white p-4 rounded shadow-md inline-block"
+          >
             <h2 className="text-lg font-bold">{usuario.nome}</h2>
             <p>Email: {usuario.email}</p>
             <p>Profissão: {usuario.profissao}</p>
@@ -39,6 +44,12 @@ export default function UserListPage() {
           </div>
         ))}
       </div>
+      <button
+        onClick={() => navigate("/welcome")}
+        className="mt-4 bg-gray-500 text-white px-2 py-1 rounded hover:bg-gray-600 w-24"
+      >
+        Voltar
+      </button>
     </div>
   );
 }

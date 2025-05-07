@@ -48,6 +48,12 @@ export default function CreateAccountPage() {
           Criar Conta
         </button>
       </form>
+      <button
+        onClick={() => navigate("/welcome")}
+        className="mt-4 bg-gray-500 text-white px-2 py-1 rounded hover:bg-gray-600 w-24"
+      >
+        Voltar
+      </button>
     </div>
   );
 }

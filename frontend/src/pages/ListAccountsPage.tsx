@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom"; // Importar useNavigate
 import api from "../services/api";
 
 export default function ListAccountsPage() {
   const [contas, setContas] = useState([]);
   const [error, setError] = useState("");
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchContas = async () => {
@@ -78,6 +80,12 @@ export default function ListAccountsPage() {
           </table>
         )}
       </div>
+      <button
+        onClick={() => navigate("/welcome")}
+        className="mt-4 bg-gray-500 text-white px-2 py-1 rounded hover:bg-gray-600 w-24"
+      >
+        Voltar
+      </button>
     </div>
   );
 }
