@@ -64,6 +64,7 @@ export default function DepositWithdrawPage() {
           </p>
         )}
         <input
+          id="valor"
           type="number"
           placeholder="Valor"
           className="w-full p-2 mb-4 border rounded"
