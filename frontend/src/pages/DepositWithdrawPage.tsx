@@ -31,9 +31,11 @@ export default function DepositWithdrawPage() {
       });
       setSaldoAtual(response.data.saldo); // Atualiza o saldo atual
       setSuccess("Depósito realizado com sucesso!");
-      setError(""); // Limpa mensagens de erro
+      //setError(""); // Limpa mensagens de erro
       setValor(""); // Limpa o campo de valor
-  
+      
+      setTimeout(() => setSuccess(""), 200);
+
       // Aguarda 2 segundos para exibir a mensagem e recarrega a página
       setTimeout(() => {
         window.location.reload(); // Recarrega a página
@@ -42,6 +44,7 @@ export default function DepositWithdrawPage() {
       console.error("Erro ao realizar depósito:", err);
       setError("Erro ao realizar depósito. Tente novamente!");
       setSuccess(""); // Limpa mensagens de sucesso
+      setValor(""); // Limpa o campo de valor
     }
   };
 
@@ -68,7 +71,7 @@ export default function DepositWithdrawPage() {
     <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100">
       <div className="bg-white p-6 rounded shadow-md w-full max-w-md">
         <h1 className="text-2xl font-bold mb-4 text-center">Depósito/Saque</h1>
-        {error && <p className="text-red-500 text-sm mb-4">{error}</p>}
+        {error && <p className="absolute top-10 bg-red-500 text-white px-6 py-3 rounded shadow-md text-center z-50">{error}</p>}
         {success && <p className="absolute top-10 bg-green-500 text-white px-6 py-3 rounded shadow-md text-center z-50">{success}</p>}
         {saldoAtual !== null && (
           <p className="text-gray-700 text-center mb-4">
