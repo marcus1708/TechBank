@@ -27,6 +27,7 @@ export default function CreateAccountPage() {
         {error && <p className="text-red-500 text-sm mb-2">{error}</p>}
         {success && <p className="absolute top-10 bg-green-500 text-white px-6 py-3 rounded shadow-md text-center z-50">{success}</p>}
         <input
+          id="nome"
           type="text"
           placeholder="Titular"
           className="w-full p-2 mb-3 border rounded"
@@ -35,6 +36,7 @@ export default function CreateAccountPage() {
           required
         />
         <input
+          id="saldo"
           type="number"
           placeholder="Saldo Inicial"
           className="w-full p-2 mb-4 border rounded"
