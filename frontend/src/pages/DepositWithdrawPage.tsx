@@ -31,10 +31,17 @@ export default function DepositWithdrawPage() {
       });
       setSaldoAtual(response.data.saldo); // Atualiza o saldo atual
       setSuccess("Depósito realizado com sucesso!");
+      setError(""); // Limpa mensagens de erro
       setValor(""); // Limpa o campo de valor
+  
+      // Aguarda 2 segundos para exibir a mensagem e recarrega a página
+      setTimeout(() => {
+        window.location.reload(); // Recarrega a página
+      }, 200); // Tempo ajustado para 0,5 segundos
     } catch (err) {
       console.error("Erro ao realizar depósito:", err);
-      setError("Erro ao realizar depósito. Tente novamente !.");
+      setError("Erro ao realizar depósito. Tente novamente!");
+      setSuccess(""); // Limpa mensagens de sucesso
     }
   };
 
@@ -46,6 +53,11 @@ export default function DepositWithdrawPage() {
       setSaldoAtual(response.data.saldo); // Atualiza o saldo atual
       setSuccess("Saque realizado com sucesso !");
       setValor(""); // Limpa o campo de valor
+  
+      // Aguarda 1 segundo para exibir a mensagem e recarrega a página
+      setTimeout(() => {
+        window.location.reload(); // Recarrega a página
+      }, 200); // Tempo ajustado para 0,5 segundos
     } catch (err) {
       console.error("Erro ao realizar saque:", err);
       setError("Erro ao realizar saque. Tente novamente.");
