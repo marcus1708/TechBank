@@ -28,14 +28,14 @@ export default function UserListPage() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gray-100 p-6">
+    <div className="min-h-screen bg-gray-100 p-6 flex flex-col items-center">
       <h1 className="text-2xl font-bold mb-4 text-center">Lista de Usuários</h1>
       {error && <p className="text-red-500">{error}</p>}
-      <div className="space-y-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
         {usuarios.map((usuario) => (
           <div
             key={usuario.id}
-            className="bg-white p-4 rounded shadow-md inline-block"
+            className="bg-white p-4 rounded shadow-md text-center"
           >
             <h2 className="text-lg font-bold">{usuario.nome}</h2>
             <p>Email: {usuario.email}</p>
