@@ -13,6 +13,8 @@ jobs:
     steps:
       - name: Checkout do código
         uses: actions/checkout@v3
+        with:
+          path: .
 
       - name: Cache do Cypress
         uses: actions/cache@v3
@@ -36,11 +38,11 @@ jobs:
         run: npm ci
 
       - name: Instalar dependências do Cypress
-        working-directory: ../cypress
+        working-directory: cypress
         run: npm install
 
       - name: Instalar binário do Cypress
-        working-directory: ../cypress
+        working-directory: cypress
         run: npx cypress install
 
       - name: Iniciar backend (porta 3000)
@@ -55,5 +57,5 @@ jobs:
         run: npx wait-on http://localhost:5175 http://localhost:3000
 
       - name: Rodar testes E2E com Cypress
-        working-directory: ../cypress
+        working-directory: cypress
         run: npx cypress run
