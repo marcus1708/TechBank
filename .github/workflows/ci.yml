@@ -14,17 +14,6 @@ jobs:
       - name: Checkout do código
         uses: actions/checkout@v3
 
-      - name: Listar arquivos e diretórios
-        run: ls -R
-
-      - name: Cache do Cypress
-        uses: actions/cache@v3
-        with:
-          path: ~/.cache/Cypress
-          key: cypress-cache-${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            cypress-cache-${{ runner.os }}-
-
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
@@ -38,14 +27,6 @@ jobs:
         working-directory: frontend
         run: npm ci
 
-      - name: Instalar dependências do Cypress
-        working-directory: cypress
-        run: npm install
-
-      - name: Instalar binário do Cypress
-        working-directory: cypress
-        run: npx cypress install
-
       - name: Iniciar backend (porta 3000)
         working-directory: backend
         run: npm run dev & echo "Backend iniciado"
@@ -55,7 +36,13 @@ jobs:
         run: npm run dev & echo "Frontend iniciado"
 
       - name: Aguardar servidores iniciarem
-        run: npx wait-on --timeout 30000 --log http://localhost:5175 http://localhost:3000
+        run: npx wait-on --timeout 60000 --log http://localhost:5175 http://localhost:3000
+
+      - name: Verificar se os servidores estão rodando
+        run: curl -I http://localhost:3000 || echo "Backend não está rodando"
+
+      - name: Verificar se os servidores estão rodando
+        run: curl -I http://localhost:5175 || echo "Frontend não está rodando"
 
       - name: Rodar testes E2E com Cypress
         working-directory: cypress
