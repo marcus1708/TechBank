@@ -10,6 +10,12 @@ jobs:
   build-and-test:
     runs-on: ubuntu-latest
 
+    services:
+      mongodb:
+        image: mongo:latest
+        ports:
+          - 27017:27017
+
     steps:
       - name: Checkout do código
         uses: actions/checkout@v3
@@ -35,11 +41,14 @@ jobs:
         working-directory: frontend
         run: npm run dev & echo "Frontend iniciado"
 
+      - name: Verificar se o backend está rodando
+        run: curl -I http://localhost:3000 || echo "Backend não está acessível"
+
       - name: Verificar se o frontend está rodando
         run: curl -I http://localhost:5173 || echo "Frontend não está acessível"
 
       - name: Aguardar servidores iniciarem
-        run: npx wait-on --timeout 90000 --log http://localhost:5173 http://localhost:3000
+        run: npx wait-on --timeout 120000 --log http://localhost:5173 http://localhost:3000
 
       - name: Rodar testes E2E com Cypress
         working-directory: cypress
