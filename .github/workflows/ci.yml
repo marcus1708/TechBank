@@ -1,0 +1,62 @@
+name: Run Cypress API and Web Tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  backend-tests:
+    name: API Tests (Backend)
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: ./backend
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run backend tests
+        run: npx cypress run
+
+  frontend-tests:
+    name: Web Tests (Frontend)
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: ./frontend
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Start frontend app
+        run: npm run dev &
+        env:
+          CI: true
+
+      - name: Wait for app to be ready
+        run: npx wait-on http://localhost:5173
+
+      - name: Run Cypress tests
+        run: npx cypress run
