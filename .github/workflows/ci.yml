@@ -33,7 +33,7 @@ jobs:
 
       - name: Rodar testes da API
         working-directory: backend
-        run: npm run test
+        run: npx cypress run
 
       - name: Instalar dependências do frontend
         working-directory: frontend
