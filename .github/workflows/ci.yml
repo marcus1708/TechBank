@@ -13,8 +13,6 @@ jobs:
     steps:
       - name: Checkout do código
         uses: actions/checkout@v3
-        with:
-          path: TechBank
 
       - name: Cache do Cypress
         uses: actions/cache@v3
