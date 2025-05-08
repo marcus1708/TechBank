@@ -37,7 +37,7 @@ jobs:
 
       - name: Instalar dependências do Cypress
         working-directory: cypress
-        run: npm ci
+        run: npm install
 
       - name: Instalar binário do Cypress
         working-directory: cypress
@@ -46,7 +46,7 @@ jobs:
       - name: Iniciar backend (porta 3000)
         working-directory: backend
         run: npm run dev &
-      
+
       - name: Iniciar frontend (porta 5175)
         working-directory: frontend
         run: npm run dev &
