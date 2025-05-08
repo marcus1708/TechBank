@@ -28,32 +28,32 @@ jobs:
           node-version: 18
 
       - name: Instalar dependências do backend
-        working-directory: ./backend # Corrigido o caminho
+        working-directory: ./backend
         run: npm ci
 
       - name: Instalar dependências do frontend
-        working-directory: ./frontend # Corrigido o caminho
+        working-directory: ./frontend
         run: npm ci
 
       - name: Instalar dependências do Cypress
-        working-directory: ./cypress # Corrigido o caminho
+        working-directory: ./cypress
         run: npm install
 
       - name: Instalar binário do Cypress
-        working-directory: ./cypress # Corrigido o caminho
+        working-directory: ./cypress
         run: npx cypress install
 
       - name: Iniciar backend (porta 3000)
-        working-directory: ./backend # Corrigido o caminho
+        working-directory: ./backend
         run: npm run dev &
 
       - name: Iniciar frontend (porta 5175)
-        working-directory: ./frontend # Corrigido o caminho
+        working-directory: ./frontend
         run: npm run dev &
 
       - name: Aguardar servidores iniciarem
         run: npx wait-on http://localhost:5175 http://localhost:3000
 
       - name: Rodar testes E2E com Cypress
-        working-directory: ./cypress # Corrigido o caminho
+        working-directory: ./cypress
         run: npx cypress run
