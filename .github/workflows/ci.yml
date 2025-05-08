@@ -31,10 +31,6 @@ jobs:
         working-directory: backend
         run: npm ci
 
-      - name: Rodar testes da API
-        working-directory: backend
-        run: npx cypress run
-
       - name: Instalar dependências do frontend
         working-directory: frontend
         run: npm ci
@@ -46,6 +42,17 @@ jobs:
       - name: Instalar binário do Cypress
         working-directory: cypress
         run: npx cypress install
+
+      - name: Iniciar backend (porta 3000)
+        working-directory: backend
+        run: npm run dev &
+      
+      - name: Iniciar frontend (porta 5175)
+        working-directory: frontend
+        run: npm run dev &
+
+      - name: Aguardar servidores iniciarem
+        run: npx wait-on http://localhost:5175 http://localhost:3000
 
       - name: Rodar testes E2E com Cypress
         working-directory: cypress
