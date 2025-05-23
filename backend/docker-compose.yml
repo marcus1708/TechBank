@@ -12,8 +12,8 @@ services:
       - PORT=3001
     depends_on:
       - mongodb
-    volumes:
-      - .:/app
+    #volumes:
+    #  - .:/app
     restart: always
 
   mongodb:
