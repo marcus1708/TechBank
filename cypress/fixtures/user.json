@@ -1,9 +1,0 @@
-{
-    "cria":{
-        "nome": "QA",
-        "email": "qa@io.com",
-        "profissao": "QA",
-        "idade": 30,
-        "senha": "123"
-      }
-}
