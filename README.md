@@ -2,7 +2,6 @@
 # Tech Bank - API e Front
 =======
 # Banco Digital
->>>>>>> refs/remotes/origin/main
 
 Este é um projeto de Banco Digital construído com **React**, **TypeScript**, **TailwindCSS** e **ShadCN/UI**
 
@@ -69,28 +68,23 @@ src/
 
 - O projeto utiliza LocalStorage para armazenar o carrinho.
 
-
----
-
-Desenvolvido por Marcus Vinicius QA 🚀
-
-
-<<<<<<< HEAD
-=======
----
-
 ## 💻 Como rodar o projeto
 
 1. **Clone o repositório:**
 
-```bash
 git clone https://github.com/marcus1708/TechBank.git
-cd Ecommerce
-```bash
 
-2. **Rode o comando:**
+2. **Execute o Container:**
+
+docker-compose up -d
+
+3. **Instale as dependências:**
 
 npm install
-
 npm run dev
->>>>>>> refs/remotes/origin/main
+
+4. **Acesse a API Swagger**
+
+http://localhost:3000/api-docs/
+
+Desenvolvido por Marcus Vinicius QA 🚀
