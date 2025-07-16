@@ -73,19 +73,27 @@ src/
 
 1. **Clone o repositório:**
 
+```
 git clone https://github.com/marcus1708/TechBank.git
+```
 
 2. **Execute o Container:**
-
+   
+ ```bash
 docker-compose up -d
+```
 
 3. **Instale as dependências:**
 
+ ```bash
 npm install
 npm run dev
+```
 
 4. **Acesse a API Swagger**
 
+ ```bash
 http://localhost:3000/api-docs/
+```
 
 Desenvolvido por Marcus Vinicius QA 🚀
